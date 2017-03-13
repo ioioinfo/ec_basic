@@ -63,8 +63,12 @@ server.register([
 	{
       register: require('./server/assets/index.js')
     },
-
-
+	{
+      register: require('./server/models/models.js')
+    },
+	{
+	  register: require('./server/base/products_base.js')
+	},
 
 ], function () {
     //Start the server

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>产品展示</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div>{{product.id}}</div>
+	<div>{{product.product_name}}</div>
+	<div>{{product.product_describe}}</div>
+	<div>已售：{{salesNumber.total_number}}</div>
+	<div>¥ {{product.product_sale_price}}</div>
+	<div>¥ {{product.product_marketing_price}}</div>
+	<div>地区：
+		<select>
+			<option value="1">北京</option>
+			<option value="2">上海</option>
+			<option value="3">广州</option>
+		</select>
+	</div>
+	{% for picture in pictures %}
+		<img src="{{picture.location}}" width ="80px"/>
+	{% endfor %}
+
+	{% for property in industry["properties"] %}
+		<div>{{property["name"]}}:&nbsp; &nbsp;{{industry_info[property["field_name"]]}}</div>
+	{% endfor %}
+</body>
+</html>
